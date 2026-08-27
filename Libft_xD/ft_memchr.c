@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duk <duk@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/26 12:29:20 by duk               #+#    #+#             */
-/*   Updated: 2026/08/26 22:20:43 by duk              ###   ########.fr       */
+/*   Created: 2026/08/27 15:27:18 by duk               #+#    #+#             */
+/*   Updated: 2026/08/27 16:39:55 by duk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcat(char *dest, const char *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	size_t	d;
-	size_t	s;
+	unsigned char	*src;
+	unsigned char	value;
+	size_t			i;
 
-	d = ft_strlen(dest);
-	s = ft_strlen(src);
+	src = (unsigned char *)s;
+	value = (unsigned char)c;
 	i = 0;
-	if (n == 0 || d >= n)
-		return (n + s);
-	while (src[i] != '\0' && d + i + 1 < n)
-	{
-		dest[d + i] = src[i];
+	while (i < n && src[i] != value)
 		i++;
-	}
-	dest[d + i] = '\0';
-	return (d + s);
+	if (n == i)
+		return (0);
+	return ((void *)&src[i]);
 }

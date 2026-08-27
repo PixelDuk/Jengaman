@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: duk <duk@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/26 12:29:20 by duk               #+#    #+#             */
-/*   Updated: 2026/08/26 22:20:43 by duk              ###   ########.fr       */
+/*   Created: 2026/08/28 00:25:02 by duk               #+#    #+#             */
+/*   Updated: 2026/08/28 01:14:17 by duk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n )
 {
 	size_t	i;
-	size_t	d;
-	size_t	s;
+	size_t	j;
+	size_t	s2len;
 
-	d = ft_strlen(dest);
-	s = ft_strlen(src);
 	i = 0;
-	if (n == 0 || d >= n)
-		return (n + s);
-	while (src[i] != '\0' && d + i + 1 < n)
-	{
-		dest[d + i] = src[i];
+	j = 0;
+	s2len = ft_strlen(s2)
+	if (s2len == 0)
+		return ()
+	while (i < n && s1[i] != s2[j])
 		i++;
-	}
-	dest[d + i] = '\0';
-	return (d + s);
+		while (s1[i] == s2[j] && s2[j] != '\0')
+		
+
+
 }

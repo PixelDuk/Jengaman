@@ -6,13 +6,13 @@
 /*   By: duk <duk@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 19:02:23 by duk               #+#    #+#             */
-/*   Updated: 2026/09/05 19:59:14 by duk              ###   ########.fr       */
+/*   Updated: 2026/09/05 20:52:50 by duk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchat_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write (fd, &c, 1);
 }

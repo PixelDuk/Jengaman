@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dgankhuy <dgankhuy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/28 00:25:02 by duk               #+#    #+#             */
-/*   Updated: 2026/09/08 17:00:31 by dgankhuy         ###   ########.fr       */
+/*   Created: 2026/08/24 10:36:12 by dgankhuy          #+#    #+#             */
+/*   Updated: 2026/08/24 15:00:14 by dgankhuy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strnstr(const char *s1, const char *s2, size_t n )
+int	ft_isalpha(int c)
 {
-	size_t	i;
-	size_t	j;
-	size_t	s2len;
-
-	i = 0;
-	s2len = ft_strlen(s2);
-	if (s2len == 0)
-		return ((char *)s1);
-	while (i < n && s1[i] != '\0')
-	{
-		j = 0;
-		while (s1[i + j] == s2[j] && s2[j] != '\0' && i + j < n)
-		{
-			j++;
-			if (s2[j] == '\0')
-				return ((char *)(s1 + i));
-		}
-		i++;
-	}
-	return (NULL);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	else if (c >= 'A' && c <= 'Z')
+		return (1);
+	else
+		return (0);
 }

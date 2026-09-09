@@ -6,7 +6,7 @@
 /*   By: duk <duk@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/28 23:53:46 by duk               #+#    #+#             */
-/*   Updated: 2026/08/29 00:24:49 by duk              ###   ########.fr       */
+/*   Updated: 2026/09/09 01:26:11 by duk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*p;
-	size_t	mult;
-
-	mult = nmemb * size;
-	p = malloc(mult);
-	if (p == 0)
+	if (size != 0 && nmemb > (size_t)-1 / size)
 		return (NULL);
-	ft_memset(p, 0, mult);
+	p = malloc(nmemb * size);
+	if (p == NULL)
+		return (NULL);
+	ft_bzero(p, (nmemb * size));
 	return (p);
 }

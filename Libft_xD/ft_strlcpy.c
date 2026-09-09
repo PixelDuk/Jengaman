@@ -6,7 +6,7 @@
 /*   By: duk <duk@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 12:31:04 by duk               #+#    #+#             */
-/*   Updated: 2026/08/26 15:50:41 by duk              ###   ########.fr       */
+/*   Updated: 2026/09/09 01:17:23 by duk              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n)
 	i = 0;
 	if (n == 0)
 		return (ft_strlen(src));
-	while (i < n - 1 && *src)
+	while (i < n - 1 && src[i] != '\0')
 	{
 		dest[i] = src[i];
 		i++;
